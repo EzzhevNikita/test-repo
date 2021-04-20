@@ -6,7 +6,7 @@ jobs:
   worker:
     runs-on: ubuntu-latest
 
-    if: github.actor == 'csigs'
+    if: github.actor == 'EzzhevNikita'
     steps:
       - uses: actions/github-script@v3
         with:
