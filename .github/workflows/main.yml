@@ -13,8 +13,13 @@ jobs:
 
     if: github.actor == 'EzzhevNikita'
     steps:
-      - uses: reitermarkus/automerge@v1.5.2
+      - uses: actions/github-script@v3
         with:
-          token: ${{ secrets.ABTT_TOKEN }}
-          merge-method: squash
-          pull-request: ${{ github.event.inputs.pull-request }}
+          github-token: ${{ secrets.ABTT_TOKEN }}
+          script: |
+            github.pulls.merge({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: context.payload.pull_request.number,
+              merge_method: 'squash'
+            })
