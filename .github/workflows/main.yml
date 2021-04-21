@@ -16,7 +16,6 @@ jobs:
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: enhancement
-          number: context.payload.pull_request.number
           github_token: ${{ secrets.ABTT_TOKEN }}
       - uses: actions/github-script@v3
         with:
