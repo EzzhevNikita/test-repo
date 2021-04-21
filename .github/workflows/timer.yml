@@ -1,0 +1,14 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Timeout
+
+# Controls when the action will run. 
+on: pull_request
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: jakejarvis/wait-action@v0.1.0
+       with:
+         time: 60
