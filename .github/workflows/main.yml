@@ -17,6 +17,7 @@ jobs:
         with:
           labels: enhancement
           number: context.payload.pull_request.number
+          github-token: ${{ secrets.ABTT_TOKEN }}
       - uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.ABTT_TOKEN }}
