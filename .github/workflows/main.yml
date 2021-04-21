@@ -4,9 +4,8 @@ on:
   pull_request:
     types:
       - opened
-  check_suite:
-    types:
-      - completed
+    branches:
+      - Localization
 
 jobs:
   worker:
