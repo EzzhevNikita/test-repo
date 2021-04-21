@@ -13,6 +13,10 @@ jobs:
 
     if: github.actor == 'EzzhevNikita'
     steps:
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: enhancement
+          number: context.payload.pull_request.number
       - uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.ABTT_TOKEN }}
